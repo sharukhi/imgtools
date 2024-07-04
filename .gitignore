@@ -23,3 +23,12 @@ vite.config.ts.timestamp-*
 
 api/__pycache__
 api/.env
+
+api.zip
+api.7z
+api.rar
+api.tar.gz
+api.tar
+api.tar.bz2
+api.tgz
+api.z
