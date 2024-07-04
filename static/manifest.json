@@ -1,0 +1,42 @@
+{
+    "name": "Imgtools",
+    "short_name": "Imgtools",
+    "description": "A set of image conversion tools",
+    "theme_color": "#0c3d26",
+    "background_color": "#fbf3eb",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "id": "/?source=pwa",
+    "start_url": "/?source=pwa",
+    "screenshots": [
+        {
+            "src": "pwa/screenshots/1.png",
+            "sizes": "1290x2796",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Screenshot"
+        },
+        {
+            "src": "pwa/screenshots/2.png",
+            "sizes": "1290x2796",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Screenshot"
+        },
+        {
+            "src": "pwa/screenshots/3.png",
+            "sizes": "1290x2796",
+            "type": "image/png",
+            "form_factor": "narrow",
+            "label": "Screenshot"
+        }
+    ],
+    "icons": [
+        {
+            "src": "/icon.png",
+            "type": "image/png",
+            "size": "1000x1000"
+        }
+    ]
+}
