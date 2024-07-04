@@ -1,5 +1,6 @@
 <script>
   import { PUBLIC_API_URL } from "$env/static/public";
+  import Navbar from "$lib/components/navbar.svelte";
   import "iconify-icon";
 </script>
 
@@ -8,6 +9,7 @@
 </svelte:head>
 
 <body>
+  <Navbar />
   <div class="h-screen flex items-center justify-center">
     <form
       action="{PUBLIC_API_URL}/api/get-png"

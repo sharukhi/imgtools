@@ -1,13 +1,10 @@
 <script>
   import "iconify-icon";
-  import Navbar from "$lib/components/navbar.svelte";
 </script>
 
 <svelte:head>
   <title>Imgtools</title>
 </svelte:head>
-
-<Navbar />
 
 <div>
   <div class="h-screen flex items-center justify-center">

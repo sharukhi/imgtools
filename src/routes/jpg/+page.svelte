@@ -1,13 +1,15 @@
 <script>
   import { PUBLIC_API_URL } from "$env/static/public";
   import "iconify-icon";
+  import Navbar from "$lib/components/navbar.svelte";
 </script>
 
 <svelte:head>
   <title>Imgtools - Convert to JPG</title>
 </svelte:head>
 
-<body class="bg-[#fbf3eb]">
+<body>
+  <Navbar />
   <div class="h-screen flex items-center justify-center">
     <form
       action="{PUBLIC_API_URL}/api/get-jpg"
