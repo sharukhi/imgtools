@@ -1,5 +1,5 @@
 <div align="center">
-<img src="/static/icon.png" height="70px" width="70px">
+<img src="/static/icon.png" height="90px" width="90px">
 <h3>Imgtools</h3>
 <p>🖼 A set of image conversion tools</p>
 </div>

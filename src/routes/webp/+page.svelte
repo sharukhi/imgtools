@@ -1,4 +1,5 @@
 <script>
+  // @ts-nocheck
   import { PUBLIC_API_URL } from "$env/static/public";
   import Navbar from "$lib/components/navbar.svelte";
   import "iconify-icon";
@@ -24,7 +25,12 @@
             ><iconify-icon icon="lucide:upload" style="color: #6a6355"
             ></iconify-icon></label
           >
-          <input id="fileInput" type="file" name="file" />
+          <input
+            id="fileInput"
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+            name="file"
+          />
         </div>
         <div><input type="submit" value="Convert to WEBP" /></div>
       </div>
