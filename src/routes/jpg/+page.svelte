@@ -1,7 +1,20 @@
 <script>
+  //@ts-nocheck
   import { PUBLIC_API_URL } from "$env/static/public";
   import "iconify-icon";
   import Navbar from "$lib/components/navbar.svelte";
+  import { onMount } from "svelte";
+
+  onMount(() => {
+    const fileInput = document.getElementById("fileInput");
+    const submitButton = document.getElementById("submitButton");
+
+    fileInput.addEventListener("change", () => {
+      if (fileInput.files.length > 0) {
+        submitButton.click();
+      }
+    });
+  });
 </script>
 
 <svelte:head>
@@ -10,7 +23,7 @@
 
 <body>
   <Navbar />
-  <div class="h-screen flex items-center justify-center">
+  <div class="h-screen flex items-center justify-center" id="uploadzone">
     <form
       action="{PUBLIC_API_URL}/api/get-jpg"
       enctype="multipart/form-data"
@@ -31,7 +44,9 @@
             name="file"
           />
         </div>
-        <div><input type="submit" value="Convert to JPG" /></div>
+        <div class="hidden">
+          <input type="submit" id="submitButton" />
+        </div>
       </div>
     </form>
   </div>

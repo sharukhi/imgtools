@@ -1,7 +1,20 @@
 <script>
+  //@ts-nocheck
   import { PUBLIC_API_URL } from "$env/static/public";
   import Navbar from "$lib/components/navbar.svelte";
   import "iconify-icon";
+  import { onMount } from "svelte";
+
+  onMount(() => {
+    const fileInput = document.getElementById("fileInput");
+    const submitButton = document.getElementById("submitButton");
+
+    fileInput.addEventListener("change", () => {
+      if (fileInput.files.length > 0) {
+        submitButton.click();
+      }
+    });
+  });
 </script>
 
 <svelte:head>
@@ -31,7 +44,9 @@
             name="file"
           />
         </div>
-        <div><input type="submit" value="Convert to PNG" /></div>
+        <div class="hidden">
+          <input type="submit" id="submitButton" />
+        </div>
       </div>
     </form>
   </div>
