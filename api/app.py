@@ -1,6 +1,7 @@
 from flask import *
 from PIL import Image
 from io import BytesIO
+from rembg import remove
 
 
 app = Flask(__name__)
@@ -62,6 +63,25 @@ def convert_webp():
             img_io.seek(0)
         return send_file(img_io, mimetype='image/webp', as_attachment=True, download_name='imgtools.webp')
 
+    return '<h1>Error 403 - Forbidden</h1><hr>You don\'t have permission to access this resource', 403
+
+
+@app.route('/api/rmbg', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            return 'No file uploaded', 400
+        file = request.files['file']
+        if file.filename == '':
+            return 'No file selected', 400
+        if file:
+            input = Image.open(file.stream)
+            output = remove(input, post_process_mask=True)
+            img_io = BytesIO()
+            output.save(img_io, 'PNG')
+            img_io.seek(0)
+            return send_file(img_io, mimetype='image/png', as_attachment=True, download_name='imgtools_rm.png')
+        
     return '<h1>Error 403 - Forbidden</h1><hr>You don\'t have permission to access this resource', 403
 
 
