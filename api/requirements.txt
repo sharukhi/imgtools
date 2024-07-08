@@ -1,4 +1,0 @@
-Flask
-pillow
-rembg
-gunicorn
